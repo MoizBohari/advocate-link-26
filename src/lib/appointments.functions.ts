@@ -12,7 +12,7 @@ const appointmentSchema = z.object({
 });
 
 export const createAppointment = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => appointmentSchema.parse(data))
+  .validator((data: unknown) => appointmentSchema.parse(data))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
