@@ -12,6 +12,7 @@ import {
   Users,
   FileText,
 } from "lucide-react";
+import heroImage from "@/assets/hero-legal.jpg";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
