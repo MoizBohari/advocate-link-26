@@ -65,9 +65,11 @@
   --color-navy: var(--navy);
   --color-navy-light: var(--navy-light);
   --color-navy-fade: var(--navy-fade);
+  --color-navy-foreground: var(--navy-foreground);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-fade: var(--gold-fade);
+  --color-gold-foreground: var(--gold-foreground);
   --color-cream: var(--cream);
   --color-cream-dark: var(--cream-dark);
 
