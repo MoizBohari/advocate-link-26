@@ -116,9 +116,11 @@
 
   /* Brand extensions */
   --navy: oklch(0.18 0.04 260);
+  --navy-foreground: oklch(0.97 0.01 90);
   --navy-light: oklch(0.25 0.05 260);
   --navy-fade: oklch(0.18 0.04 260 / 0.08);
   --gold: oklch(0.70 0.14 95);
+  --gold-foreground: oklch(0.18 0.04 260);
   --gold-light: oklch(0.78 0.12 95);
   --gold-fade: oklch(0.70 0.14 95 / 0.12);
   --cream: oklch(0.97 0.01 90);
