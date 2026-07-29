@@ -102,7 +102,7 @@ function HomePage() {
             <div className="relative hidden lg:block">
               <div className="aspect-[4/3] overflow-hidden rounded-lg border border-gold/20 shadow-2xl">
                 <img
-                  src="/src/assets/hero-legal.jpg"
+                  src={heroImage}
                   alt="Professional legal office with law books and scales of justice"
                   className="h-full w-full object-cover"
                 />
