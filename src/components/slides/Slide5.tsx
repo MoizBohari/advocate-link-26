@@ -11,7 +11,7 @@ const stack = [
   },
   {
     layer: "Backend & Data",
-    items: ["Lovable Cloud", "Supabase Database", "Secure Server Functions"],
+    items: ["Lovable Cloud", "Cloud Database", "Secure Server Functions"],
   },
   {
     layer: "Deployment",
