@@ -3,6 +3,9 @@ import { SlideViewer, SlidePrintView } from "@/components/slides/SlideViewer";
 
 export const Route = createFileRoute("/slides")({
   component: SlidesPage,
+  validateSearch: (search: Record<string, unknown>) => ({
+    print: search.print != null ? String(search.print) : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Project Presentation — Advocate Website & Appointment System" },
@@ -26,7 +29,7 @@ export const Route = createFileRoute("/slides")({
 
 function SlidesPage() {
   const search = Route.useSearch();
-  const isPrint = search?.print != null;
+  const isPrint = search.print != null;
 
   return (
     <div className="h-screen w-screen overflow-hidden">
@@ -34,3 +37,4 @@ function SlidesPage() {
     </div>
   );
 }
+
