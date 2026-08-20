@@ -291,16 +291,19 @@ function Footer() {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const location = useLocation();
+  const isSlidesRoute = location.pathname === "/slides";
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col">
-        <Header />
-        <main className="flex-1">
+      <div className={`flex min-h-screen flex-col ${isSlidesRoute ? "slides-mode" : ""}`}>
+        {!isSlidesRoute && <Header />}
+        <main className={isSlidesRoute ? "relative" : "flex-1"}>
           <Outlet />
         </main>
-        <Footer />
+        {!isSlidesRoute && <Footer />}
       </div>
     </QueryClientProvider>
   );
 }
+
