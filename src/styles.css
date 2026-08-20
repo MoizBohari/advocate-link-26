@@ -191,3 +191,139 @@
     font-family: var(--font-display);
   }
 }
+
+/*
+ * Slide deck tokens and scaling.
+ * Slides render at 1920x1080 and scale to fit the viewport.
+ */
+:root {
+  --slide-primary: var(--navy);
+  --slide-primary-foreground: var(--navy-foreground);
+  --slide-accent: var(--gold);
+  --slide-accent-foreground: var(--gold-foreground);
+  --slide-accent-light: var(--gold-light);
+  --slide-surface: var(--cream);
+  --slide-surface-alt: var(--cream-dark);
+  --slide-text: var(--foreground);
+  --slide-muted: var(--muted-foreground);
+
+  --slide-title: 88px;
+  --slide-title-lg: 104px;
+  --slide-subtitle: 48px;
+  --slide-body: 32px;
+  --slide-body-lg: 40px;
+  --slide-caption: 24px;
+  --slide-kicker: 22px;
+  --slide-chrome: 20px;
+}
+
+.slide-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--slide-surface);
+}
+
+.slide-scaler {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  left: 50%;
+  top: 50%;
+  margin-left: -960px;
+  margin-top: -540px;
+  transform: scale(var(--slide-scale, 1));
+  transform-origin: center center;
+}
+
+.slide-content {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--font-body);
+}
+
+.slide-title {
+  font-size: var(--slide-title);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-family: var(--font-display);
+}
+
+.slide-title-lg {
+  font-size: var(--slide-title-lg);
+  line-height: 1.0;
+  letter-spacing: -0.05em;
+  font-family: var(--font-display);
+}
+
+.slide-subtitle {
+  font-size: var(--slide-subtitle);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+}
+
+.slide-body {
+  font-size: var(--slide-body);
+  line-height: 1.28;
+  font-family: var(--font-body);
+}
+
+.slide-body-lg {
+  font-size: var(--slide-body-lg);
+  line-height: 1.22;
+  font-family: var(--font-body);
+}
+
+.slide-caption {
+  font-size: var(--slide-caption);
+  line-height: 1.25;
+  font-family: var(--font-body);
+}
+
+.slide-kicker {
+  font-size: var(--slide-kicker);
+  line-height: 1.1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+.slide-chrome {
+  font-size: var(--slide-chrome);
+  line-height: 1.15;
+  font-family: var(--font-body);
+}
+
+@media print {
+  @page {
+    size: 1920px 1080px landscape;
+    margin: 0;
+  }
+
+  .slide-print {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .slide-print:last-child {
+    page-break-after: auto;
+  }
+
+  .slide-print-wrapper {
+    width: 1920px !important;
+    height: 1080px !important;
+    overflow: hidden;
+  }
+
+  .slide-print-scaler {
+    transform: none !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+  }
+}
+
